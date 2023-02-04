@@ -1,0 +1,15 @@
+#about-container{
+	background-image: url('../img/background-1.jpg');
+	background-blend-mode: darken;
+	background-size: cover;
+}
+#skills-contianer{
+	background-image: url('../img/background-2.jpg');
+	background-blend-mode: darken;
+	background-size: cover;
+}
+#projects-container{
+	background-image: url('../img/background-3.jpg');
+	background-blend-mode: darken;
+	background-size: cover;
+}
