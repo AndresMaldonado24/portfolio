@@ -27,12 +27,14 @@ export default function About(){
 				{
 					showModal 
 					&& 
-					<Modal>
+					<Modal showModal={() => setShowModal(!showModal)}>
 						<ContactUs showModal={() => setShowModal(!showModal)}/>
 					</Modal>
 				}
 				<button 
-					className="w-40 h-10 rounded-full border-2 border-purple-300 text-purple-900 font-extrabold bg-gradient-to-b from-pink-400 to-cyan-400 hover:border-purple-900 active:border-purple-100"
+					className="w-40 h-10 rounded-full border-2
+					border-purple-300 text-purple-900 font-extrabold bg-gradient-to-b from-pink-400 to-cyan-400
+					hover:border-purple-900 active:border-purple-100"
 					onClick={ () => setShowModal(!showModal)}>
 					Contact me
 				</button>

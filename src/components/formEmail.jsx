@@ -27,9 +27,10 @@ export function ContactUs({showModal}){
 				})
 			});
 	};
-
+	//TODO: Agregar funcionalidad de cierre de modal, boton y fondo negro.
 	return (
-
+		
+		
 			<form 
 				ref={form}
 				onSubmit={sendEmail}
@@ -38,6 +39,14 @@ export function ContactUs({showModal}){
 				fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
 				flex flex-col gap-4 p-10 
 				rounded-lg'>
+				<div className='flex justify-end '>
+					<span className='w-10 h-6 text-white border-2 rounded-lg
+					flex justify-center items-center
+				bg-violet-300 border-white  font-bold
+				hover:bg-white hover:text-violet-300 hover:border-violet-300 hover:cursor-pointer
+				active:bg-white active:text-violet-300 active:border-violet-300'
+					onClick={ showModal }>&#x2715;</span>
+				</div>
 				<label className='font-bold text-white'>
 					Nombre
 				</label>
@@ -56,5 +65,6 @@ export function ContactUs({showModal}){
 					Enviar
 				</button>
 		</form>
+
 	);
 };
