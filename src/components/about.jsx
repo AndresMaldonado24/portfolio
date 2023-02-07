@@ -27,7 +27,7 @@ export default function About(){
 				{
 					showModal 
 					&& 
-					<Modal showModal={() => setShowModal(!showModal)}>
+					<Modal>
 						<ContactUs showModal={() => setShowModal(!showModal)}/>
 					</Modal>
 				}

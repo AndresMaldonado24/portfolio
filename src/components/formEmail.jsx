@@ -27,44 +27,58 @@ export function ContactUs({showModal}){
 				})
 			});
 	};
-	//TODO: Agregar funcionalidad de cierre de modal, boton y fondo negro.
+
 	return (
+	<>
+		<div 
+			className='fixed top-0 left-0 right-0 z-10 w-screen h-screen bg-black bg-opacity-70'
+			onClick={ () => showModal()}>
+		</div>
+		<form 
+		ref={form}
+		onSubmit={sendEmail}
+		className='sm:w-[500px] sm:h-[600px] w-[300px] h-[600px] 
+		bg-gradient-to-br from-pink-400 to-cyan-400
+		fixed z-50 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
+		flex flex-col gap-4 p-10 
+		rounded-lg '>
+		<div className='flex justify-end '>
+			<span className='w-10 h-6 text-pink-200 font-bold
+				border-2 rounded-lg  border-pink-200 cursor-pointer
+				flex justify-center items-center 
+				bg-gradient-to-br from-pink-400 to-cyan-400
+				hover:shadow-md hover:shadow-pink-300 active:shadow-md active:shadow-pink-300
+				transition-shadow duration-300 ease-in-out'
+				onClick={ showModal }>&#x2715;</span>
+		</div>
+
+		<div className='w-full flex'>
+			<label for='text' className='w-[80px] font-bold text-pink-200 rounded-l-lg bg-gradient-to-br from-pink-400 to-cyan-400 py-1 px-2 border-2 border-r-0 border-pink-200'>Nombre</label>
+			<input type="text" name="user_name"  className='grow rounded-r-lg outline-none py-1 px-2 border-2 border-pink-200 focus:shadow-inner focus:shadow-pink-300'required/>
+		</div>
+
+		<div className='w-full flex'>
+			<label for='email' className='w-[80px] font-bold text-pink-200 rounded-l-lg bg-gradient-to-br from-pink-400 to-cyan-400 py-1 px-2 border-2 border-r-0 border-pink-200'>Correo</label>
+			<input type="email" name="user_email"  className='grow rounded-r-lg outline-none py-1 px-2 border-2 border-pink-200 focus:shadow-inner focus:shadow-pink-300' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+		</div>
+
+		<div className='w-full h-full flex flex-col'>
+			<label for='message' className='font-bold text-center text-pink-200 rounded-t-lg bg-gradient-to-br from-pink-400 to-cyan-400 py-1 px-2 border-2 border-b-0 border-pink-200'>Mensaje</label>
+			<textarea name="message" required className='resize-none h-full p-2 border-2 border-pink-200 outline-none focus:shadow-inner focus:shadow-pink-300'/>
+			<button 
+				type="submit" 
+				value="Send" 
+				className='grow text-pink-200 font-bold p-2
+					bg-gradient-to-br from-pink-400 to-cyan-400
+					border-2 rounded-b-lg border-pink-200 cursor-pointer
+					hover:shadow-md hover:shadow-pink-300 active:shadow-md active:shadow-pink-300
+					transition-shadow duration-300 ease-in-out'>
+				Enviar
+			</button>
+		</div>
+	</form>
+	</>
 		
-		
-			<form 
-				ref={form}
-				onSubmit={sendEmail}
-				className='sm:w-[500px] sm:h-[600px] w-[300px] h-[600px] 
-				bg-gradient-to-b from-pink-400 to-cyan-400
-				fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
-				flex flex-col gap-4 p-10 
-				rounded-lg'>
-				<div className='flex justify-end '>
-					<span className='w-10 h-6 text-white border-2 rounded-lg
-					flex justify-center items-center
-				bg-violet-300 border-white  font-bold
-				hover:bg-white hover:text-violet-300 hover:border-violet-300 hover:cursor-pointer
-				active:bg-white active:text-violet-300 active:border-violet-300'
-					onClick={ showModal }>&#x2715;</span>
-				</div>
-				<label className='font-bold text-white'>
-					Nombre
-				</label>
-				<input type="text" name="user_name"  className='rounded-lg px-2'required/>
-				<label className='font-bold text-white'>
-					Correo
-				</label>
-				<input type="email" name="user_email"  className='rounded-lg px-2' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
-				<label className='font-bold text-white'>
-					Mensaje
-				</label>
-				<textarea name="message" required className='resize-none rounded-lg h-1/2 p-2'/>
-				<button type="submit" value="Send" className='w-1/2 mx-auto rounded-lg bg-violet-300 border-2 border-white text-white font-bold
-				 hover:bg-white hover:text-violet-300 hover:border-violet-300
-				 active:bg-white active:text-violet-300 active:border-violet-300'>
-					Enviar
-				</button>
-		</form>
 
 	);
 };

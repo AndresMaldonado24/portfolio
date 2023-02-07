@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-export default function Modal({children, showModal}){
+export default function Modal({children}){
     
-    const portalNode = document.createElement('div');
-
-    portalNode.className = 'fixed top-0 left-0 right-0 z-50 w-screen h-screen bg-black bg-opacity-70';
-    portalNode.onclick = showModal;
+    const portalNode = document.createElement('div');    
 
     useEffect( () => {
 
