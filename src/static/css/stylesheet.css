@@ -5,7 +5,7 @@
 }
 #skills-contianer{
 	background-image: url('../img/background-2.jpg');
-	background-blend-mode: darken;
+	background-blend-mode: hard-light;
 	background-size: cover;
 }
 #projects-container{
