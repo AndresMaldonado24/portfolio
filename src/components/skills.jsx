@@ -41,15 +41,7 @@ export default  function Skills(){
 function ButtonSkills({skills, active, setActive}){
 
 	const ChangeActive = () => {
-		if( skills === 'Frontend'){
-			setActive(skills)
-		}
-		else if (skills === 'Backend'){
-			setActive(skills)
-		}
-		else if (skills === 'Complementary'){
-			setActive(skills)
-		}
+		setActive(skills)
 	}
 
 	return(

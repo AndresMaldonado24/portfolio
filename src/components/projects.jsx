@@ -1,11 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Lenguage } from './lenguages'
 import bannerToDoList from '../static/img/project-todolist.png'
 
 export default function Projects(){
 
-	const [project, setProject] = useState()
+	const [project, setProject] = useState(null)
 	const [active, setActive] = useState('ToDoList')
+
+	useEffect( () => {
+		if(active.toLowerCase() === 'todolist'){
+			setProject(
+				<DisplayProject 
+				web={'https://andresmaldonado24.github.io/project-todolist/'} 
+				source={bannerToDoList}
+				title={'Lista de Tareas'}
+				desc={'Aplicación de lista de tareas, la cual permite agregar tú propias tareas, eliminarlas y darlas por terminadas, de esta forma llevar un control de estas mismas.'}
+				leng={['html','css','tailwind','react']}/>
+			)
+		}
+	},[active])
 
 	return(
 		<section id='Projects' className="h-screen bg-gradient-to-b from-violet-400 to-violet-500 flex justify-center items-center">
@@ -16,15 +29,12 @@ export default function Projects(){
 					</h1>
 				</div>
 				<div className="grow border-t border-b border-purple-300 flex justify-center items-center">
-					<DisplayProject 
-						web={'https://andresmaldonado24.github.io/project-todolist/'} 
-						source={bannerToDoList}
-						title={'Lista de Tareas'}
-						desc={'Aplicación de lista de tareas, la cual permite agregar tú propias tareas, eliminarlas y darlas por terminadas, de esta forma llevar un control de estas mismas.'}
-						leng={['html','css','tailwind','react']}/>
+					{
+						project
+					}
 				</div>
 				<div className="w-full h-20 flex justify-center items-center gap-2">
-					<ButtonProject project={'ToDoList'}/>
+					<ButtonProject project={'ToDoList'} active={active} setActive={setActive}/>
 				</div>
 			</div>
 		</section>
@@ -44,15 +54,21 @@ function ButtonToProject({children}){
 		</button>
 	)
 }
-function ButtonProject({project}){
+function ButtonProject({project, active, setActive}){
+
+	const ChangeActive = () => {
+		setActive(project)
+	}
+
+
 	return(
 		<button className={`h-1/2 border-2 border-purple-300
 		p-2 font-bold
 		rounded-lg bg-gradient-to-br from-pink-400 to-cyan-400
 		hover:shadow-md hover:shadow-pink-300
-		transition-shadow duration-300 ease-in-out `
+		transition-shadow duration-300 ease-in-out ` + (active.toLowerCase().includes(project.toLowerCase()) ? 'text-cyan-300' : 'text-pink-200' )
 		}
-		>{project}</button>
+		onClick={ () => ChangeActive() }>{project}</button>
 	)
 }
 function LenguageIcon({source}){
@@ -74,7 +90,7 @@ function DisplayProject({web, source, title, desc, leng}){
 					{
 								leng.map( element =>{
 									const x = Lenguage.find(item => item.name === element)
-									return <LenguageIcon source={x.url}/>
+									return <LenguageIcon key={x.name} source={x.url}/>
 								})
 					}
 				</div>
@@ -88,4 +104,4 @@ function DisplayProject({web, source, title, desc, leng}){
 	</div>
 	)
 }
-//TODO Agregar funcionalidades para cambiar de projectos
+
