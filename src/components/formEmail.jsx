@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
 
+//TODO Arrelgar el modal
 export function ContactUs({showModal}){
 	const form = useRef();
 
@@ -38,40 +39,38 @@ export function ContactUs({showModal}){
 		ref={form}
 		onSubmit={sendEmail}
 		className='sm:w-[500px] sm:h-[600px] w-[300px] h-[600px] 
-		bg-gradient-to-br from-pink-400 to-cyan-400
+		bg-gradient-to-b from-neutral-200 to-neutral-300
 		fixed z-50 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
-		flex flex-col gap-4 p-10 
-		rounded-lg '>
+		flex flex-col flex-nowrap gap-4 p-10 
+		rounded-lg border-2 border-black'>
 		<div className='flex justify-end '>
-			<span className='w-10 h-6 text-pink-200 font-bold
-				border-2 rounded-lg  border-pink-200 cursor-pointer
-				flex justify-center items-center 
-				bg-gradient-to-br from-pink-400 to-cyan-400
-				hover:shadow-md hover:shadow-pink-300 active:shadow-md active:shadow-pink-300
+			<span className='w-10 h-6 text-black font-bold
+				border-2 border-black rounded-lg cursor-pointer
+				flex justify-center items-center bg-red-600
+				hover:shadow-md hover:shadow-amber-600 active:shadow-md active:shadow-amber-600 
 				transition-shadow duration-300 ease-in-out'
 				onClick={ showModal }>&#x2715;</span>
 		</div>
 
-		<div className='w-full flex'>
-			<label for='text' className='w-[80px] font-bold text-pink-200 rounded-l-lg bg-gradient-to-br from-pink-400 to-cyan-400 py-1 px-2 border-2 border-r-0 border-pink-200'>Nombre</label>
-			<input type="text" name="user_name"  className='grow rounded-r-lg outline-none py-1 px-2 border-2 border-pink-200 focus:shadow-inner focus:shadow-pink-300'required/>
+		<div className='w-full flex flex-col flex-nowrap'>
+			<label for='text' className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Nombre</label>
+			<input type="text" name="user_name"  className='rounded-b-lg outline-none py-1 px-2 border-2 border-black focus:shadow-inner focus:shadow-neutral-400' required/>
 		</div>
 
-		<div className='w-full flex'>
-			<label for='email' className='w-[80px] font-bold text-pink-200 rounded-l-lg bg-gradient-to-br from-pink-400 to-cyan-400 py-1 px-2 border-2 border-r-0 border-pink-200'>Correo</label>
-			<input type="email" name="user_email"  className='grow rounded-r-lg outline-none py-1 px-2 border-2 border-pink-200 focus:shadow-inner focus:shadow-pink-300' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+		<div className='w-full flex flex-col flex-nowrap'>
+			<label for='email'className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Correo</label>
+			<input type="email" name="user_email"  className='rounded-b-lg outline-none py-1 px-2 border-2 border-black focus:shadow-inner focus:shadow-neutral-400' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
 		</div>
 
 		<div className='w-full h-full flex flex-col'>
-			<label for='message' className='font-bold text-center text-pink-200 rounded-t-lg bg-gradient-to-br from-pink-400 to-cyan-400 py-1 px-2 border-2 border-b-0 border-pink-200'>Mensaje</label>
-			<textarea name="message" required className='resize-none h-full p-2 border-2 border-pink-200 outline-none focus:shadow-inner focus:shadow-pink-300'/>
+			<label for='message' className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Mensaje</label>
+			<textarea name="message" required className='resize-none h-full p-2 border-2 border-black outline-none focus:shadow-inner focus:shadow-neutral-400'/>
 			<button 
 				type="submit" 
 				value="Send" 
-				className='grow text-pink-200 font-bold p-2
-					bg-gradient-to-br from-pink-400 to-cyan-400
-					border-2 rounded-b-lg border-pink-200 cursor-pointer
-					hover:shadow-md hover:shadow-pink-300 active:shadow-md active:shadow-pink-300
+				className='grow text-black font-bold p-2
+				bg-neutral-400 border-2 border-black border-t-0 rounded-b-lg cursor-pointer
+					hover:shadow-md hover:shadow-neutral-400 active:shadow-md active:shadow-neutral-400
 					transition-shadow duration-300 ease-in-out'>
 				Enviar
 			</button>

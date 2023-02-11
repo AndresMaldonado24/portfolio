@@ -26,10 +26,10 @@ export default  function Skills(){
 						My Skills
 					</h1>
 				</div>
-				<div className="grow border-t-2 border-b-2 border-black">
+				<div className="grow border-t-2 border-b-2 border-black flex flex-row flex-wrap justify-center">
 					{content}
 				</div>
-				<div className="w-full h-20 flex justify-center items-center gap-2">
+				<div className="w-full h-20 flex justify-center items-center gap-2 overflow-x-auto">
 					<ButtonSkills skills={'Frontend'} active={active} setActive={setActive} />
 					<ButtonSkills skills={'Backend'} active={active} setActive={setActive} />
 					<ButtonSkills skills={'Complementary'} active={active} setActive={setActive} />
@@ -56,7 +56,7 @@ function ButtonSkills({skills, active, setActive}){
 }
 function LenguageIcon({source}){
 	return(
-		<img className='w-32 sm:w-40 bg-neutral-100 bg-opacity-40 hover:bg-opacity-60 rounded-lg p-4' src={source} />
+		<img className='w-28 sm:w-44 bg-neutral-100 bg-opacity-40 hover:bg-opacity-60 active:bg-opacity-60 rounded-lg p-4' src={source} />
 	)
 }
 function FrontendSkills(){

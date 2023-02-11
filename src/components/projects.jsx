@@ -46,7 +46,7 @@ export default function Projects(){
 						project
 					}
 				</div>
-				<div className="w-full h-20 flex justify-center items-center gap-2">
+				<div className="w-full h-20 flex justify-center items-center gap-2 overflow-x-auto">
 					{
 						ListOfProjects.map( project => {
 							return <ButtonProject key={project.id} project={project.title} active={active} setActive={setActive}/>
