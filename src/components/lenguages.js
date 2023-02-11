@@ -49,5 +49,4 @@ const Lenguage = [
 	}
 	
 ]
-
-export { Lenguage }
+export {Lenguage}

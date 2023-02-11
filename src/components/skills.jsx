@@ -19,14 +19,14 @@ export default  function Skills(){
 	},[active])
 
 	return(
-		<section id='Skills' className="h-screen bg-gradient-to-b from-violet-300 to-violet-400 flex justify-center items-center">
-			<div id='skills-contianer' className="w-11/12 h-5/6 bg-white bg-opacity-50 rounded-lg shadow-xl flex flex-col">
+		<section id='Skills' className="h-screen bg-gradient-to-b from-neutral-300 to-neutral-400 flex justify-center items-center">
+			<div id='skills-contianer' className="w-11/12 h-5/6 bg-white bg-opacity-50 rounded-lg shadow-xl flex flex-col border-2 border-black">
 				<div className="w-full">
-					<h1 className='font-bold text-transparent text-4xl bg-clip-text bg-gradient-to-br from-pink-400 to-cyan-400 text-center p-4'>
+					<h1 className='font-bold text-neutral-300 text-4xl text-center p-4'>
 						My Skills
 					</h1>
 				</div>
-				<div className="grow border-t border-b border-purple-300">
+				<div className="grow border-t-2 border-b-2 border-black">
 					{content}
 				</div>
 				<div className="w-full h-20 flex justify-center items-center gap-2">
@@ -46,24 +46,24 @@ function ButtonSkills({skills, active, setActive}){
 
 	return(
 		<button 
-			className={`h-1/2 border-2 border-purple-300
-			p-2 font-bold
-			rounded-lg bg-gradient-to-br from-pink-400 to-cyan-400
-			hover:shadow-md hover:shadow-pink-300
-			transition-shadow duration-300 ease-in-out ` + (active.toLowerCase().includes(skills.toLowerCase()) ? 'text-cyan-300' : 'text-pink-200' )
+			className={`h-1/2 border-2 border-black	p-2 font-bold
+			rounded-lg bg-gradient-to-br from-neutral-200 to-neutral-400
+			hover:shadow-md hover:shadow-neutral-200 active:shadow-md active:shadow-neutral-200
+			transition-shadow duration-300 ease-in-out ` + (active.toLowerCase().includes(skills.toLowerCase()) ? 'text-black' : 'text-neutral-600' )
 			}
 			onClick={ () => ChangeActive() }>{skills}</button>
 	)
 }
 function LenguageIcon({source}){
 	return(
-		<img className='w-32 sm:w-40 bg-pink-200 bg-opacity-40 hover:bg-opacity-60 rounded-lg p-4' src={source} />
+		<img className='w-32 sm:w-40 bg-neutral-100 bg-opacity-40 hover:bg-opacity-60 rounded-lg p-4' src={source} />
 	)
 }
 function FrontendSkills(){
 	return(
-		<div className='grid grid-cols-2 gap-y-4 justify-items-center'>
-			<h1 className='col-span-2 font-bold text-transparent text-2xl bg-clip-text bg-gradient-to-br from-pink-400 to-cyan-400 text-center p-4'>Frontend Programing Lenguage</h1>
+		<div className='flex flex-col h-full'>
+		<h1 className='font-bold text-neutral-300 text-2xl text-center p-2'>Frontend Programing Lenguage</h1>
+		<div className='flex flex-wrap gap-4 justify-center items-center m-auto p-4'>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg"}/>
@@ -71,25 +71,30 @@ function FrontendSkills(){
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg"}/>
 		</div>
+		</div>
 	)
 }
 function BackendSkills(){
 	return (
-		<div className='grid grid-cols-2 gap-y-4 justify-items-center'>
-			<h1 className='col-span-2 font-bold text-transparent text-2xl bg-clip-text bg-gradient-to-br from-pink-400 to-cyan-400 text-center p-4'>Backend Programing Lenguage</h1>
+	<div className='flex flex-col h-full'>
+		<h1 className='font-bold text-neutral-300 text-2xl bg-clip-text text-center p-2'>Backend Programing Lenguage</h1>
+		<div className='flex flex-wrap gap-4 justify-center items-center m-auto p-4'>			
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg"}/>
 		</div>
+	</div>
 	)
 }
 function ComplementarySkills(){
 	return(
-		<div className='grid grid-cols-2 gap-y-4 justify-items-center'>
-			<h1 className='col-span-2 font-bold text-transparent text-2xl bg-clip-text bg-gradient-to-br from-pink-400 to-cyan-400 text-center p-4'>Complementary Programing Lenguage</h1>
+		<div className='flex flex-col h-full'>
+			<h1 className='font-bold text-neutral-300 text-2xl bg-clip-text text-center p-2'>Complementary Programing Lenguage</h1>
+			<div className='flex flex-wrap gap-4 justify-center items-center m-auto p-4'>			
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"}/>
+			</div>
 		</div>
 	)
 }
