@@ -93,6 +93,7 @@ function ComplementarySkills(){
 			<h1 className='font-bold text-neutral-300 text-2xl bg-clip-text text-center p-2'>Complementary Programing Lenguage</h1>
 			<div className='flex flex-wrap gap-4 justify-center items-center m-auto p-4'>			
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"}/>
+			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"}/>
 			<LenguageIcon source={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"}/>
 			</div>
 		</div>

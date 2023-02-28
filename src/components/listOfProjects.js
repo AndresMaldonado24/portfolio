@@ -13,7 +13,7 @@ const ListOfProjects = [
 		repo: 'https://github.com/AndresMaldonado24/project-todolist-backend',
 		title : 'API Lista de Tareas',
 		desc : 'Backend para el proyecto de "Lista de Tareas", el cual permite el login y el alacenamiento de datos por usuario.',
-		lang : ['nodejs','express']
+		lang : ['nodejs','express','mongo']
 	},
 ]
 

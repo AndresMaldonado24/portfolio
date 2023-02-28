@@ -46,6 +46,10 @@ const Lenguage = [
 	{
 		name: 'git',
 		url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
+	},
+	{
+		name: 'mongo',
+		url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg"
 	}
 	
 ]

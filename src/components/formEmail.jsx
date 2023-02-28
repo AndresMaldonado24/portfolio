@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
 
-//TODO Arrelgar el modal
 export function ContactUs({showModal}){
 	const form = useRef();
 
@@ -53,17 +52,17 @@ export function ContactUs({showModal}){
 		</div>
 
 		<div className='w-full flex flex-col flex-nowrap'>
-			<label for='text' className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Nombre</label>
+			<label htmlFor='text' className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Nombre</label>
 			<input type="text" name="user_name"  className='rounded-b-lg outline-none py-1 px-2 border-2 border-black focus:shadow-inner focus:shadow-neutral-400' required/>
 		</div>
 
 		<div className='w-full flex flex-col flex-nowrap'>
-			<label for='email'className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Correo</label>
+			<label htmlFor='email'className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Correo</label>
 			<input type="email" name="user_email"  className='rounded-b-lg outline-none py-1 px-2 border-2 border-black focus:shadow-inner focus:shadow-neutral-400' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
 		</div>
 
 		<div className='w-full h-full flex flex-col'>
-			<label for='message' className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Mensaje</label>
+			<label htmlFor='message' className='font-bold text-center text-black rounded-t-lg bg-neutral-400 py-1 px-2 border-2 border-b-0 border-black'>Mensaje</label>
 			<textarea name="message" required className='resize-none h-full p-2 border-2 border-black outline-none focus:shadow-inner focus:shadow-neutral-400'/>
 			<button 
 				type="submit" 
