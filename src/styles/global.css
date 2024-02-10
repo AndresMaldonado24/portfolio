@@ -19,7 +19,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./backgound-1.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/portfolio/backgound-1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
