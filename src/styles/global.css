@@ -28,7 +28,7 @@ main {
 .md-container {
   width: 800px;
   height: 600px;
-  border: 4px dashed;
+  border: 4px double;
   border-radius: 15px 0;
   display: flex;
   flex-direction: column;
